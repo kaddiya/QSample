@@ -17,4 +17,7 @@ include 'services:webservice'
 */
 
 rootProject.name = 'QSample'
+
 include 'QSampleCommons','QSampleProducer','QSampleConsumer'
+
+
