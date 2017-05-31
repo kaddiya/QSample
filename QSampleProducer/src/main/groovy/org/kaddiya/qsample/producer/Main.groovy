@@ -8,7 +8,7 @@ import org.kaddiya.qsample.commons.SampleMessage
 @Slf4j
 class Main {
         public static void main(String [] args){
-            if(args[0]<1){
+            if(args.size()<1){
                 throw new IllegalArgumentException("Please specify the topic Id")
             }
             String topicId =  args[0];
