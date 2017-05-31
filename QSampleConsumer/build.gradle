@@ -1,2 +1,6 @@
-apply plugin :'application'
-mainClassName="org.kaddiya.qsample.consumer.Main"
+apply plugin: 'application'
+mainClassName = "org.kaddiya.qsample.consumer.Main"
+
+dependencies {
+    compile 'org.kaddiya.qsample:QSampleCommons:1.0.0'
+}
