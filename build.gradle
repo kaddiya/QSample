@@ -1,6 +1,6 @@
 allprojects {
     group = 'org.kaddiya.qsample'
-    version = '1.0.0'
+    version = '3.0.0'
     apply plugin: 'groovy'
     apply plugin: 'idea'
     apply plugin: 'maven'

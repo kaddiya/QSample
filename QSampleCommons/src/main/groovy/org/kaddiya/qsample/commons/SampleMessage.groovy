@@ -7,5 +7,5 @@ import groovy.transform.Immutable
 class SampleMessage {
     Integer id
     String name
-
+    Boolean valid
 }
