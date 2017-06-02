@@ -4,8 +4,7 @@ A demonstration project to show how [Q](https://github.com/kaddiya/Q) can be use
 
 # Requirements:  
 1.Working installation of Java 8.  
-2.`QClient-1.0.0`  to be resolvable by gradle in either a nexus server or local `~/.m2` repo.To do this follow the instructions [here]
-(https://github.com/kaddiya/Q)
+2.`QClient-1.0.0`  to be resolvable by gradle in either a nexus server or local `~/.m2` repo.To do this follow the instructions [here](https://github.com/kaddiya/Q).The simplest way is to install the QClient-1.0.0.jar in the local maven repo.  
 
 # Building:  
 1.Once the pre requisites are complete ,clone this repo and in the root folder run `./gradlew clean distZip`.This will create the distributions of the Sample Producer and Sample Consumer.
