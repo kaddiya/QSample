@@ -10,10 +10,18 @@ import org.kaddiya.qsample.commons.SampleMessage
 @Slf4j
 class Main {
     public static void main(String[] args) {
-        if (args.size() < 1) {
-            throw new IllegalArgumentException("Please specify the topic Id")
+        if (args.size() < 2) {
+            throw new IllegalArgumentException("Please specify the topic Id and the consumer id")
         }
-        String topicId = args[0];
+        String topicId = args[0];  //topic ID
+        String consumerId = args[1] //consumer ID
+
+        List<String>deps
+        if(args.size() == 3){
+            deps  = Arrays.asList(args[2].split(","))
+        }else{
+            deps = Arrays.asList("")
+        }
 
         BrokerConfig bcfg = new BrokerConfig("http", System.getenv("BROKER_HOST"), Integer.valueOf(System.getenv("BROKER_PORT")))
 
@@ -32,7 +40,7 @@ class Main {
             return  message
         }
         //due to the type erasure we to tell our abstract class on how to unmarshall the content to our type
-        SimpleConsumer bc = new SimpleConsumer<SampleMessage>(topicId, bcfg, Arrays.asList(""), callbackOnMessage as Closure<SampleMessage>,SampleMessage.class)
+        SimpleConsumer bc = new SimpleConsumer<SampleMessage>(consumerId,topicId, bcfg, deps, callbackOnMessage as Closure<SampleMessage>,SampleMessage.class)
 
         bc.consumeMesage();
     }
