@@ -4,5 +4,5 @@ mainClassName = "org.kaddiya.qsample.producer.Main"
 dependencies {
     compile project(':QSampleCommons')
     //compile(':QSampleCommons:1.0.0')
- //   compile 'org.kaddiya.qsample:QSampleCommons:1.0.0'
+    //   compile 'org.kaddiya.qsample:QSampleCommons:1.0.0'
 }

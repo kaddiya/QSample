@@ -1,10 +1,8 @@
 package org.kaddiya.qsample.consumer
 
-import groovy.transform.CompileStatic
 import groovy.util.logging.Slf4j
 import org.kaddiya.QClient.common.BrokerConfig
 import org.kaddiya.QClient.consumer.internal.SimpleConsumer
-
 import org.kaddiya.qsample.commons.SampleMessage
 
 @Slf4j
@@ -16,10 +14,10 @@ class Main {
         String topicId = args[0];  //topic ID
         String consumerId = args[1] //consumer ID
 
-        List<String>deps
-        if(args.size() == 3){
-            deps  = Arrays.asList(args[2].split(","))
-        }else{
+        List<String> deps
+        if (args.size() == 3) {
+            deps = Arrays.asList(args[2].split(","))
+        } else {
             deps = Arrays.asList("")
         }
 
@@ -37,10 +35,10 @@ class Main {
                 log.error("could not marshall the json" + e.getMessage())
                 return null
             }
-            return  message
+            return message
         }
         //due to the type erasure we to tell our abstract class on how to unmarshall the content to our type
-        SimpleConsumer bc = new SimpleConsumer<SampleMessage>(consumerId,topicId, bcfg, deps, callbackOnMessage as Closure<SampleMessage>,SampleMessage.class)
+        SimpleConsumer bc = new SimpleConsumer<SampleMessage>(consumerId, topicId, bcfg, deps, callbackOnMessage as Closure<SampleMessage>, SampleMessage.class)
 
         bc.consumeMesage();
     }

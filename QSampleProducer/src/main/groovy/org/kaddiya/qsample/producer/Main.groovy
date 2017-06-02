@@ -20,7 +20,7 @@ class Main {
         Random r = new Random()
         while (true) {
             i++
-            SampleMessage s = new SampleMessage(i, r.nextDouble().toString(),true)
+            SampleMessage s = new SampleMessage(i, r.nextDouble().toString(), true)
             try {
                 producer.publishToBroker(s)
             } catch (UnpublishableException e) {
